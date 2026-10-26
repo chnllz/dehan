@@ -78,7 +78,10 @@
       <div class="panel" id="quote">
         <h3>Tell us about your cargo</h3>
         <p>Six fields is enough for a first quote. If you would rather write it out, email works just as well.</p>
-        <form class="form" onsubmit="return submitForm(event)">
+        <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitForm(event)">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="language" value="en">
+          <p style="display:none"><label>Leave this empty: <input name="bot-field"></label></p>
           <input name="company" placeholder="Company" required>
           <input name="email" type="email" placeholder="Email" required>
           <input name="lane" placeholder="Origin city to destination" required>
@@ -100,12 +103,20 @@
 <script>
 function submitForm(e){
   e.preventDefault();
-  var f=e.target;
-  var body="Company: "+f.company.value+"\nEmail: "+f.email.value+"\nLane: "+f.lane.value+
-    "\nMode: "+f.mode.value+"\nCargo: "+f.cargo.value;
-  window.location.href="mailto:info@dh-log.net?subject="+
-    encodeURIComponent("Freight enquiry - "+f.company.value)+"&body="+encodeURIComponent(body);
-  document.getElementById("formNote").textContent="Opening your mail client. If nothing happens, write to info@dh-log.net.";
+  var f=e.target, btn=f.querySelector("button"), note=document.getElementById("formNote");
+  btn.disabled=true;
+  note.textContent="Sending...";
+  fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},
+    body:new URLSearchParams(new FormData(f)).toString()})
+    .then(function(r){
+      if(!r.ok) throw new Error(r.status);
+      f.reset();
+      note.textContent="Thank you. Your enquiry has been sent and we will reply within 24 hours on working days.";
+    })
+    .catch(function(){
+      note.textContent="Sorry, the form could not be sent. Please try again or write to info@dh-log.net.";
+    })
+    .finally(function(){btn.disabled=false;});
   return false;
 }
 </script>
