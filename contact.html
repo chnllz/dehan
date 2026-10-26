@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a China-Europe Rail Quote | DH EURASIA RAILLINK LIMITED</title>
+<meta name="description" content="Send commodity, weight, volume, origin and destination for routing and pricing within 24 hours. Phone, email and WhatsApp, with offices in Shenzhen and Xi'an.">
+<link rel="canonical" href="https://www.dh-log.net/contact.html">
+<link rel="alternate" hreflang="en" href="https://www.dh-log.net/contact.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.dh-log.net/zh/contact.html">
+<link rel="alternate" hreflang="x-default" href="https://www.dh-log.net/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DH EURASIA RAILLINK LIMITED">
+<meta property="og:title" content="Request a China-Europe Rail Quote | DH EURASIA RAILLINK LIMITED">
+<meta property="og:description" content="Send commodity, weight, volume, origin and destination for routing and pricing within 24 hours. Phone, email and WhatsApp, with offices in Shenzhen and Xi'an.">
+<meta property="og:url" content="https://www.dh-log.net/contact.html">
+<meta property="og:image" content="https://www.dh-log.net/assets/og.png">
+<meta property="og:locale" content="en_GB">
+<meta name="theme-color" content="#063A5A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23008C5C'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3EDH%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo"><img class="logomark" src="assets/logo-mark.png" alt="" width="62" height="28"><span>DH EURASIA RAILLINK LIMITED<small>CHINA-EUROPE RAIL</small></span></a>
+      <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="network.html">Network</a>
+      <a href="why-rail.html">Why rail</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="contact.html" class="cta">Get a quote</a>
+        <a class="langbtn" href="zh/contact.html">中文</a>
+        <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="wrap">
+    <div class="bc"><a href="index.html">Home</a><i>/</i>Contact</div>
+    <div class="eyebrow">CONTACT</div>
+    <h1>Talk to the team that runs the train</h1>
+    <p>Send the lane and the cargo and we will come back with routing, transit and pricing. Quotes within 24 hours on working days, often the same day for Xi'an express lanes.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2 style="font-size:22px">Direct lines</h2>
+        <dl style="margin-top:18px">
+          <div><dt>Phone</dt><dd><a href="tel:+8613530069525">+86 135 3006 9525</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:info@dh-log.net">info@dh-log.net</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/+8613530069525" target="_blank" rel="noopener">+86 135 3006 9525</a></dd></div>
+          <div><dt>Shenzhen office</dt><dd>Room 1719, Jinlong Building, Caiwuwei, No. 139 Hongbao Road, Luohu District, Shenzhen, Guangdong, China</dd></div>
+          <div><dt>Xi'an office</dt><dd>Xi'an, Shaanxi, China</dd></div>
+        </dl>
+
+        <div class="info-box" style="margin-top:28px">
+          <h4>What to include in your enquiry</h4>
+          <p>Commodity name and HS code if you have it</p>
+          <p>Weight, volume and dimensions, plus packaging</p>
+          <p>Origin city or factory address, and destination</p>
+          <p>Ready date and any deadline at destination</p>
+          <h4 style="margin-top:22px">Response time</h4>
+          <p>Within 24 hours on working days, often the same day for Xi'an express lanes.</p>
+        </div>
+      </div>
+
+      <div class="panel" id="quote">
+        <h3>Tell us about your cargo</h3>
+        <p>Six fields is enough for a first quote. If you would rather write it out, email works just as well.</p>
+        <form class="form" onsubmit="return submitForm(event)">
+          <input name="company" placeholder="Company" required>
+          <input name="email" type="email" placeholder="Email" required>
+          <input name="lane" placeholder="Origin city to destination" required>
+          <select name="mode" id="shipMode">
+            <option value="rail">China-Europe rail</option>
+            <option value="ocean">Ocean freight</option>
+            <option value="road">International road</option>
+            <option value="air">Air freight</option>
+            <option value="multimodal">Multimodal</option>
+          </select>
+          <textarea name="cargo" placeholder="Cargo details: commodity, weight, volume, ready date" required></textarea>
+          <button type="submit">Send enquiry</button>
+        </form>
+        <p class="note" id="formNote">Prefer email? Write to info@dh-log.net and we will pick it up there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function submitForm(e){
+  e.preventDefault();
+  var f=e.target;
+  var body="Company: "+f.company.value+"\nEmail: "+f.email.value+"\nLane: "+f.lane.value+
+    "\nMode: "+f.mode.value+"\nCargo: "+f.cargo.value;
+  window.location.href="mailto:info@dh-log.net?subject="+
+    encodeURIComponent("Freight enquiry - "+f.company.value)+"&body="+encodeURIComponent(body);
+  document.getElementById("formNote").textContent="Opening your mail client. If nothing happens, write to info@dh-log.net.";
+  return false;
+}
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid3">
+      <div>
+        <h5>DH EURASIA RAILLINK LIMITED</h5>
+        <p>Room 1719, Jinlong Building, Caiwuwei, No. 139 Hongbao Road, Luohu District, Shenzhen, Guangdong, China</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#rail">China-Europe rail</a></li>
+          <li><a href="services.html#ocean">Ocean freight</a></li>
+          <li><a href="services.html#road">International road</a></li>
+          <li><a href="services.html#air">Air freight</a></li>
+          <li><a href="services.html#multimodal">Multimodal</a></li>
+          <li><a href="services.html#customs">Customs and value-added</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p><a href="tel:+8613530069525">+86 135 3006 9525</a></p>
+        <p><a href="https://wa.me/+8613530069525" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p><a href="mailto:info@dh-log.net">info@dh-log.net</a></p>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>&copy; <span id="yr"></span> DH EURASIA RAILLINK LIMITED. All rights reserved.</span>
+      <span>China-Europe rail freight.</span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

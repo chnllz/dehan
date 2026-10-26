@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中欧班列询价与联系方式 | 德瀚欧亚</title>
+<meta name="description" content="提供品名、重量、体积、起运地即可获取路线与报价，工作日 24 小时内响应。电话、邮箱、WhatsApp，深圳与西安两处办公地点。">
+<link rel="canonical" href="https://www.dh-log.net/zh/contact.html">
+<link rel="alternate" hreflang="en" href="https://www.dh-log.net/contact.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.dh-log.net/zh/contact.html">
+<link rel="alternate" hreflang="x-default" href="https://www.dh-log.net/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DH EURASIA RAILLINK LIMITED">
+<meta property="og:title" content="中欧班列询价与联系方式 | 德瀚欧亚">
+<meta property="og:description" content="提供品名、重量、体积、起运地即可获取路线与报价，工作日 24 小时内响应。电话、邮箱、WhatsApp，深圳与西安两处办公地点。">
+<meta property="og:url" content="https://www.dh-log.net/zh/contact.html">
+<meta property="og:image" content="https://www.dh-log.net/assets/og.png">
+<meta property="og:locale" content="zh_CN">
+<meta name="theme-color" content="#063A5A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23008C5C'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3EDH%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a href="../index.html" class="logo"><img class="logomark" src="../assets/logo-mark.png" alt="" width="62" height="28"><span>DH EURASIA RAILLINK LIMITED<small>中欧班列 · 跨境物流</small></span></a>
+      <div class="menu" id="menu">
+      <a href="index.html">首页</a>
+      <a href="services.html">核心业务</a>
+      <a href="network.html">网络与班期</a>
+      <a href="why-rail.html">为什么选铁路</a>
+      <a href="about.html">关于我们</a>
+      <a href="contact.html" class="active">联系我们</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="contact.html" class="cta">获取报价</a>
+        <a class="langbtn" href="../contact.html">English</a>
+        <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="wrap">
+    <div class="bc"><a href="index.html">首页</a><i>/</i>联系我们</div>
+    <div class="eyebrow">联系我们</div>
+    <h1>直接对接跑这条线的人</h1>
+    <p>告诉我们线路与货物信息，我们反馈路线、时效与报价。工作日 24 小时内响应，西安快线线路通常当天回复。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2 style="font-size:22px">联系方式</h2>
+        <dl style="margin-top:18px">
+          <div><dt>电话</dt><dd><a href="tel:+8613530069525">+86 135 3006 9525</a></dd></div>
+          <div><dt>邮箱</dt><dd><a href="mailto:info@dh-log.net">info@dh-log.net</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/+8613530069525" target="_blank" rel="noopener">+86 135 3006 9525</a></dd></div>
+          <div><dt>深圳办事处</dt><dd>中国广东省深圳市罗湖区红宝路 139 号蔡屋围金龙大厦 1719 室</dd></div>
+          <div><dt>西安办事处</dt><dd>中国陕西省西安市</dd></div>
+        </dl>
+
+        <div class="info-box" style="margin-top:28px">
+          <h4>询价时请提供</h4>
+          <p>品名，如有 HS 编码请一并提供</p>
+          <p>重量、体积与尺寸，以及包装方式</p>
+          <p>起运城市或工厂地址，以及目的地</p>
+          <p>可发运日期与目的地的时限要求</p>
+          <h4 style="margin-top:22px">响应时间</h4>
+          <p>工作日 24 小时内，西安快线线路通常当天回复。</p>
+        </div>
+      </div>
+
+      <div class="panel" id="quote">
+        <h3>告诉我们你的货物</h3>
+        <p>六个栏目就够出第一版报价。如果更习惯写信，直接发邮件同样可以。</p>
+        <form class="form" onsubmit="return submitForm(event)">
+          <input name="company" placeholder="公司名称" required>
+          <input name="email" type="email" placeholder="邮箱" required>
+          <input name="lane" placeholder="起运城市 至 目的地" required>
+          <select name="mode" id="shipMode">
+            <option value="rail">中欧班列</option>
+            <option value="ocean">国际海运</option>
+            <option value="road">国际公路</option>
+            <option value="air">国际空运</option>
+            <option value="multimodal">多式联运</option>
+          </select>
+          <textarea name="cargo" placeholder="货物信息：品名、重量、体积、可发运日期" required></textarea>
+          <button type="submit">提交询价</button>
+        </form>
+        <p class="note" id="formNote">也可直接发邮件至 info@dh-log.net，我们会同样及时处理。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function submitForm(e){
+  e.preventDefault();
+  var f=e.target;
+  var body="公司: "+f.company.value+"\n邮箱: "+f.email.value+"\n线路: "+f.lane.value+
+    "\n方式: "+f.mode.value+"\n货物: "+f.cargo.value;
+  window.location.href="mailto:info@dh-log.net?subject="+
+    encodeURIComponent("Freight enquiry - "+f.company.value)+"&body="+encodeURIComponent(body);
+  document.getElementById("formNote").textContent="正在打开邮件客户端。若未弹出，请直接发信至 info@dh-log.net。";
+  return false;
+}
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid3">
+      <div>
+        <h5>DH EURASIA RAILLINK LIMITED</h5>
+        <p>中国广东省深圳市罗湖区红宝路 139 号蔡屋围金龙大厦 1719 室</p>
+      </div>
+      <div>
+        <h5>核心业务</h5>
+        <ul>
+          <li><a href="services.html#rail">中欧班列</a></li>
+          <li><a href="services.html#ocean">国际海运</a></li>
+          <li><a href="services.html#road">国际公路</a></li>
+          <li><a href="services.html#air">国际空运</a></li>
+          <li><a href="services.html#multimodal">多式联运</a></li>
+          <li><a href="services.html#customs">报关与增值服务</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>联系方式</h5>
+        <p><a href="tel:+8613530069525">+86 135 3006 9525</a></p>
+        <p><a href="https://wa.me/+8613530069525" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p><a href="mailto:info@dh-log.net">info@dh-log.net</a></p>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>&copy; <span id="yr"></span> DH EURASIA RAILLINK LIMITED. 版权所有。</span>
+      <span>专注中欧班列。</span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
