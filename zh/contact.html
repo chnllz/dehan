@@ -16,8 +16,10 @@
 <meta property="og:url" content="https://www.dh-log.net/zh/contact.html">
 <meta property="og:image" content="https://www.dh-log.net/assets/og.png">
 <meta property="og:locale" content="zh_CN">
-<meta name="theme-color" content="#063A5A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23008C5C'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3EDH%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B5A7E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23008C5C'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3EDH%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -59,9 +61,9 @@
         <dl style="margin-top:18px">
           <div><dt>电话</dt><dd><a href="tel:+8613530069525">+86 135 3006 9525</a></dd></div>
           <div><dt>邮箱</dt><dd><a href="mailto:info@dh-log.net">info@dh-log.net</a></dd></div>
-          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/+8613530069525" target="_blank" rel="noopener">+86 135 3006 9525</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/8613530069525" target="_blank" rel="noopener">+86 135 3006 9525</a></dd></div>
           <div><dt>深圳办事处</dt><dd>中国广东省深圳市罗湖区红宝路 139 号蔡屋围金龙大厦 1719 室</dd></div>
-          <div><dt>西安办事处</dt><dd>中国陕西省西安市</dd></div>
+          <div><dt>西安办事处</dt><dd>中国陕西省西安市高新区天谷六路 789 号 3 号楼 1202 室</dd></div>
         </dl>
 
         <div class="info-box" style="margin-top:28px">
@@ -78,7 +80,10 @@
       <div class="panel" id="quote">
         <h3>告诉我们你的货物</h3>
         <p>六个栏目就够出第一版报价。如果更习惯写信，直接发邮件同样可以。</p>
-        <form class="form" onsubmit="return submitForm(event)">
+        <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitForm(event)">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="language" value="zh">
+          <p style="display:none"><label>Leave this empty: <input name="bot-field"></label></p>
           <input name="company" placeholder="公司名称" required>
           <input name="email" type="email" placeholder="邮箱" required>
           <input name="lane" placeholder="起运城市 至 目的地" required>
@@ -100,12 +105,20 @@
 <script>
 function submitForm(e){
   e.preventDefault();
-  var f=e.target;
-  var body="公司: "+f.company.value+"\n邮箱: "+f.email.value+"\n线路: "+f.lane.value+
-    "\n方式: "+f.mode.value+"\n货物: "+f.cargo.value;
-  window.location.href="mailto:info@dh-log.net?subject="+
-    encodeURIComponent("Freight enquiry - "+f.company.value)+"&body="+encodeURIComponent(body);
-  document.getElementById("formNote").textContent="正在打开邮件客户端。若未弹出，请直接发信至 info@dh-log.net。";
+  var f=e.target, btn=f.querySelector("button"), note=document.getElementById("formNote");
+  btn.disabled=true;
+  note.textContent="正在提交...";
+  fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},
+    body:new URLSearchParams(new FormData(f)).toString()})
+    .then(function(r){
+      if(!r.ok) throw new Error(r.status);
+      f.reset();
+      note.textContent="感谢您的询价，我们已收到，将在工作日 24 小时内回复。";
+    })
+    .catch(function(){
+      note.textContent="提交失败，请重试，或直接发邮件至 info@dh-log.net。";
+    })
+    .finally(function(){btn.disabled=false;});
   return false;
 }
 </script>
@@ -131,7 +144,7 @@ function submitForm(e){
       <div>
         <h5>联系方式</h5>
         <p><a href="tel:+8613530069525">+86 135 3006 9525</a></p>
-        <p><a href="https://wa.me/+8613530069525" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p><a href="https://wa.me/8613530069525" target="_blank" rel="noopener">WhatsApp</a></p>
         <p><a href="mailto:info@dh-log.net">info@dh-log.net</a></p>
       </div>
     </div>
