@@ -77,7 +77,7 @@
       <div class="panel" id="quote">
         <h3>Tell us about your cargo</h3>
         <p>Six fields is enough for a first quote. If you would rather write it out, email works just as well.</p>
-        <form class="form" name="contact" method="POST" netlify netlify-honeypot="bot-field">
+        <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitForm(event)">
           <input type="hidden" name="form-name" value="contact">
           <input type="hidden" name="language" value="en">
           <p style="display:none"><label>Leave this empty: <input name="bot-field"></label></p>
@@ -140,8 +140,6 @@ function submitForm(e){
       </div>
       <div>
         <h5>Contact</h5>
-        <p><a href="tel:+8613530069525">+86 135 3006 9525</a></p>
-        <p><a href="https://wa.me/8613530069525" target="_blank" rel="noopener">WhatsApp</a></p>
         <p><a href="mailto:info@dh-log.net">info@dh-log.net</a></p>
       </div>
     </div>

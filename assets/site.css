@@ -37,7 +37,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:70px}
 .slogan .stxt{font-size:19px;line-height:1.7;color:var(--navy);font-weight:600;letter-spacing:1px;max-width:840px;margin:0 auto}
 @media(max-width:600px){.slogan{padding:22px 0 20px}.slogan .stxt{font-size:16px}}
 
-.hero{background:linear-gradient(180deg,rgba(26,120,162,.7) 0%,rgba(26,120,162,.45) 45%,rgba(34,137,181,.66) 100%),url(hero-rail.jpg) center 60%/cover no-repeat;color:#fff;padding:78px 0 56px;position:relative;overflow:hidden}
+.hero{background:url(hero-rail.jpg) center 60%/cover no-repeat;color:#fff;padding:78px 0 56px;position:relative;overflow:hidden}
 .hero:before{content:"";position:absolute;right:-140px;top:-80px;width:540px;height:540px;
   border:1px solid rgba(255,255,255,.07);border-radius:50%}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
@@ -58,7 +58,7 @@ h1{font-size:40px;line-height:1.22;font-weight:600;margin-bottom:20px;letter-spa
 .rrow b{font-weight:500}
 .rrow em{font-style:normal;color:#9DCFE0;font-size:13px;text-align:right}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.14);
-  margin-top:66px;border-top:1px solid rgba(255,255,255,.14)}
+  margin-top:36px;border-top:1px solid rgba(255,255,255,.14)}
 .stat{background:rgba(26,120,162,.72);padding:24px 20px}
 .stat b{display:block;font-size:27px;font-weight:600;color:#fff;line-height:1.2}
 .stat span{font-size:12.5px;color:#9DCFE0;display:block;margin-top:6px}
@@ -270,22 +270,35 @@ section.svclist{padding-top:48px}
 
 /* ---- round 2 ---- */
 .eyebrow-hero{display:inline-block;background:#fff;color:var(--navy);font-size:15px;letter-spacing:2px;padding:7px 14px;border-radius:6px;margin-bottom:22px}
-.hero p.lead{color:#EAF5FA}
-.hero p.lead-stations{font-size:15px;margin-top:-14px;margin-bottom:24px;color:#fff;font-weight:500}
-.hero h1.hero-tag{font-size:30px;margin-bottom:28px}
+.hero p.lead{color:#fff;font-size:17px;line-height:1.65}
+.hero p.lead,.hero h1.hero-tag{text-shadow:0 1px 3px rgba(0,0,0,.75),0 0 14px rgba(0,0,0,.45)}
+.hero p.lead-stations{margin-top:-16px;margin-bottom:14px}
+.hero h1.hero-tag{font-size:17px;line-height:1.65;font-weight:700;letter-spacing:0;max-width:540px;margin-bottom:28px}
 .eyebrow-solo{margin-bottom:24px}
 .eyebrow-main{font-size:21px;letter-spacing:1.4px;font-weight:800}
 h2.h2-sub{font-size:21px;line-height:1.4}
 h1.eyebrow{font-size:18px;line-height:1.5;letter-spacing:2px;font-weight:700;max-width:none;margin-bottom:16px}
 .ph-network h1{font-size:24px;color:rgba(255,255,255,.82);margin-bottom:12px}
 .ph-network p{font-size:14.5px;color:rgba(203,227,238,.82)}
-.logowrap.logo-plain{background:none;border:0;border-radius:0;padding:0}
+.logowrap.logo-plain{background:none;border:0;border-radius:0;padding:0;display:flex;justify-content:center;align-items:center;height:100%}
 sub{font-size:.72em;line-height:0;vertical-align:-.25em}
 @media(max-width:640px){
-  .hero h1.hero-tag{font-size:24px}
   .eyebrow-hero{font-size:13px}
   .eyebrow,.eyebrow-2{font-size:14px;letter-spacing:1.5px}
   h1.eyebrow{font-size:16px}
   .eyebrow-main{font-size:18px}
   .ph-network h1{font-size:20px}
 }
+/* hero has no tint over the photo, so the cards on it carry their own dark background */
+.hero .route-card,.hero .hub{background:rgba(8,52,74,.66);border-color:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.hero .route-card h4,.hero .hub h5{color:#BFE6F2}
+.hero .rrow em{color:#D3EAF4}
+.hero .btn-ghost{background:rgba(8,52,74,.55);border-color:rgba(255,255,255,.55)}
+.hero .btn-ghost:hover{background:rgba(8,52,74,.75)}
+.hero-note{display:table;margin:20px auto 0;padding:6px 14px;border-radius:6px;background:rgba(8,52,74,.66);color:#E3F2F8}
+.hero-grid>div:first-child{background:rgba(8,52,74,.6);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:24px 26px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.hero p.lead,.hero h1.hero-tag{text-shadow:0 1px 2px rgba(0,0,0,.5)}
+@media(max-width:640px){.hero-grid>div:first-child{padding:20px 18px}}
+/* round the outer corners of the stats row: first and last stat on desktop, top and bottom when stacked on phones */
+.stats{border-radius:12px;overflow:hidden;border-top:0}
+@media(max-width:640px){.hero{background-image:url(hero-rail-m.jpg)}}
