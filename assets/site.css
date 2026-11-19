@@ -37,7 +37,8 @@ nav{display:flex;align-items:center;justify-content:space-between;height:70px}
 .slogan .stxt{font-size:19px;line-height:1.7;color:var(--navy);font-weight:600;letter-spacing:1px;max-width:840px;margin:0 auto}
 @media(max-width:600px){.slogan{padding:22px 0 20px}.slogan .stxt{font-size:16px}}
 
-.hero{background:url(hero-rail.jpg) center 60%/cover no-repeat;color:#fff;padding:78px 0 56px;position:relative;overflow:hidden}
+.hero{background:url(home.jpg) center 60%/cover no-repeat;color:#fff;padding:78px 0 56px;position:relative;overflow:hidden}
+.hero-m{display:none}
 .hero:before{content:"";position:absolute;right:-140px;top:-80px;width:540px;height:540px;
   border:1px solid rgba(255,255,255,.07);border-radius:50%}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
@@ -201,8 +202,8 @@ footer a:hover{color:#fff}
 .pagehero:before{content:"";position:absolute;right:-160px;top:-120px;width:520px;height:520px;
   border:1px solid rgba(255,255,255,.07);border-radius:50%}
 .pagehero .wrap{position:relative;z-index:2}
-.ph-services{background:linear-gradient(90deg,rgba(26,120,162,.84) 0%,rgba(26,120,162,.62) 55%,rgba(34,137,181,.3) 100%),url(bg-services.jpg) center/cover no-repeat}
-.ph-network{background:linear-gradient(90deg,rgba(26,120,162,.84) 0%,rgba(26,120,162,.62) 55%,rgba(34,137,181,.3) 100%),url(bg-network.jpg) center 70%/cover no-repeat}
+.ph-services{background:url(bg-services.jpg) center/cover no-repeat}
+.ph-network{background:url(bg-network.jpg) center 70%/cover no-repeat}
 .pagehero h1{font-size:34px;max-width:820px;margin-bottom:16px}
 .pagehero p{font-size:16px;color:#CBE3EE;max-width:660px}
 .bc{font-size:12.5px;color:#8CCFE0;margin-bottom:18px;letter-spacing:.3px}
@@ -301,4 +302,53 @@ sub{font-size:.72em;line-height:0;vertical-align:-.25em}
 @media(max-width:640px){.hero-grid>div:first-child{padding:20px 18px}}
 /* round the outer corners of the stats row: first and last stat on desktop, top and bottom when stacked on phones */
 .stats{border-radius:12px;overflow:hidden;border-top:0}
-@media(max-width:640px){.hero{background-image:url(hero-rail-m.jpg)}}
+@media(max-width:640px){
+  /* photo sits in a short banner like the services/network page heroes, so the
+     whole picture shows instead of being cropped behind the tall hero content */
+  .hero{background-image:none;color:var(--ink);padding:0 0 44px}
+  .hero:before{display:none}
+  .hero-m{display:block;background:url(home-m.jpg) center 60%/cover no-repeat;padding:58px 0 50px;margin-bottom:26px}
+  .hero-grid .eyebrow-hero{display:none}
+  .hero-m .eyebrow-hero{margin-bottom:0}
+  .hero p.lead{color:var(--muted);font-size:15.5px;margin-bottom:16px}
+  .hero p.lead-stations{margin-top:0;margin-bottom:18px}
+  .hero h1.hero-tag{color:var(--band);font-size:20px;line-height:1.4;margin-bottom:22px}
+  .hero p.lead,.hero h1.hero-tag{text-shadow:none}
+  .hero .route-card{background:var(--soft);border:1px solid var(--line);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .hero .route-card h4{color:var(--band)}
+  .hero .rrow{border-bottom-color:var(--line)}
+  .hero .rrow em{color:var(--accent)}
+  .hero .btn-ghost{background:transparent;border-color:var(--band);color:var(--band)}
+  .hero .btn-ghost:hover{background:var(--soft)}
+  .hero .stats{grid-template-columns:1fr 1fr;background:var(--line);border:1px solid var(--line);margin-top:26px}
+  .hero .stat{background:var(--soft);padding:14px 16px}
+  .hero .stat b{color:var(--band);font-size:22px}
+  .hero .stat span{font-size:12px;line-height:1.4}
+  .hero .stat span{color:var(--muted)}
+  .hero .hub{background:#fff;border:1px solid var(--line);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .hero .hub h5{color:var(--accent)}
+  .hero .hub p{color:var(--muted)}
+  .hero-note{display:block;text-align:left;background:var(--accent-soft);color:var(--muted);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:10px 14px;margin-top:16px;font-size:12.5px;line-height:1.5}
+  .hero-grid>div:first-child{background:none;border:0;border-radius:0;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* ---- round 4 ---- */
+/* home eyebrow sits straight on the photo: no white pill, white bold text */
+.hero .eyebrow-hero{background:none;color:#fff;font-size:15px;line-height:1.5;letter-spacing:2px;font-weight:800;padding:0;border-radius:0;margin-bottom:18px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.hero p.lead-stations{margin-bottom:28px}
+/* page heroes show the photo untinted, like the home hero, with the text on its own dark box */
+.ph-why{background:url(why-rail.jpg) center 72%/cover no-repeat}
+.ph-about{background:url(about.jpg) center 42%/cover no-repeat}
+.ph-contact{background:url(contact.jpg) center 60%/cover no-repeat}
+.ph-box{display:inline-block;max-width:760px;background:rgba(8,52,74,.6);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:24px 28px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.ph-box h1,.ph-box p{text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.ph-box>:last-child{margin-bottom:0}
+.ph-box .eyebrow{color:#BFE6F2}
+/* "vs" set apart from RAIL / SEA / AIR */
+.vs{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400;font-size:1.2em;letter-spacing:.5px;color:#8CCFE0;margin:0 3px}
+@media(max-width:640px){
+  .hero .eyebrow-hero{font-size:14px;text-shadow:0 1px 3px rgba(0,0,0,.8),0 0 12px rgba(0,0,0,.5)}
+  .hero-m .eyebrow-hero{margin-bottom:0}
+  .hero p.lead-stations{margin-bottom:22px}
+  .ph-box{display:block;padding:20px 18px}
+}
